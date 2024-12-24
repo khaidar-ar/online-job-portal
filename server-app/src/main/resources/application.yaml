@@ -1,0 +1,25 @@
+spring:
+    application:
+        name : online-job-portal
+
+    jpa:
+        database: POSTGRESQL
+        generate-ddl: true
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                dialect : org.hibernate.dialect.PostgreSQLDialect
+        show-sql: true
+    datasource:
+        hikari:
+            connection-timeout: 60000
+            idle-timeout : 60000
+            maximum-pool-size : 10
+            max-lifetime: 100000
+        url: ${DB_URL}
+        username: ${DB_USERNAME}
+        password: ${DB_PASSWORD}
+
+server:
+  port: 8080
